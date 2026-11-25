@@ -292,6 +292,10 @@
     .status-active { color: #1a7a4a; border-color: #1a7a4a; background: rgba(26,122,74,0.06); }
     .status-ongoing { color: #b07d10; border-color: #b07d10; background: rgba(176,125,16,0.06); }
 
+    .projects-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 560px)); }
+    .deliverable-pending { color: var(--muted); }
+    .deliverable-pending:hover { text-decoration: none; }
+
     /* ── PROJECT DETAIL PAGE (CMHC) ── */
     #page-cmhc { background: var(--bg); }
     #page-cmhc .team-grid { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
@@ -303,6 +307,14 @@
       margin-bottom: 1.75rem; transition: gap var(--transition);
     }
     .back-link:hover { gap: 0.7rem; }
+    .proj-topbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.75rem; flex-wrap: wrap; }
+    .proj-topbar .back-link { margin-bottom: 0; }
+    .share-link {
+      background: none; border: 1.5px solid var(--blue); color: var(--blue); cursor: pointer;
+      font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase;
+      font-weight: 500; padding: 0.5rem 0.9rem; transition: all var(--transition);
+    }
+    .share-link:hover { background: var(--blue); color: var(--white); }
     .project-more {
       display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.9rem;
       background: none; border: none; cursor: pointer; padding: 0;
@@ -531,12 +543,12 @@
       </div>
       <div class="hero-stats">
         <div>
-          <div class="hero-stat-num">4</div>
+          <div class="hero-stat-num">8</div>
           <div class="hero-stat-label">Working Papers</div>
         </div>
         <div>
-          <div class="hero-stat-num">2</div>
-          <div class="hero-stat-label">Active Projects</div>
+          <div class="hero-stat-num">1</div>
+          <div class="hero-stat-label">Active Project</div>
         </div>
         <div>
           <div class="hero-stat-num">1</div>
@@ -576,38 +588,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Team -->
-      <div class="team-header">
-        <div class="section-label">People</div>
-        <h2>Team</h2>
-      </div>
-      <div class="team-grid">
-        <div class="member-card">
-          <div class="member-avatar">RA</div>
-          <div class="member-name">Researcher A</div>
-          <div class="member-role">Principal Investigator</div>
-          <a class="member-link" href="#">Faculty Profile →</a>
-        </div>
-        <div class="member-card">
-          <div class="member-avatar">RB</div>
-          <div class="member-name">Researcher B</div>
-          <div class="member-role">Associate Professor</div>
-          <a class="member-link" href="#">Faculty Profile →</a>
-        </div>
-        <div class="member-card">
-          <div class="member-avatar">RC</div>
-          <div class="member-name">Researcher C</div>
-          <div class="member-role">Research Fellow</div>
-          <a class="member-link" href="#">Faculty Profile →</a>
-        </div>
-        <div class="member-card">
-          <div class="member-avatar">RD</div>
-          <div class="member-name">Researcher D</div>
-          <div class="member-role">PhD Candidate</div>
-          <a class="member-link" href="#">Profile →</a>
-        </div>
-      </div>
     </div>
     <footer class="page-footer">
       <div class="footer-inner">
@@ -631,13 +611,7 @@
       <div class="section-header">
         <div class="section-label">Research</div>
         <h2>Academic Research</h2>
-        <p class="section-intro">Peer-reviewed publications, working papers, and media coverage of our scholarly work.</p>
-      </div>
-
-      <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab(event,'papers')">Working Papers</button>
-        <button class="tab-btn" onclick="switchTab(event,'publications')">Publications</button>
-        <button class="tab-btn" onclick="switchTab(event,'media')">Media Coverage</button>
+        <p class="section-intro">Working papers by our faculty and collaborators, available on SSRN.</p>
       </div>
 
       <!-- WORKING PAPERS -->
@@ -646,6 +620,74 @@
 
           <div class="paper-item">
             <div class="paper-num">01</div>
+            <div class="paper-body">
+              <div class="paper-type">Working Paper · MIT Center for Real Estate Research Paper (forthcoming)</div>
+              <div class="paper-title">Serving the Servers: Do Data Centers Create Local Employment?</div>
+              <div class="paper-authors">Ernesto Aldana, Simon Büchler, Alexander Carlo, Lyndsey Rolheiser, Albert Saiz, Carles Vergara-Alert — 2026</div>
+              <div class="paper-tags">
+                <span class="tag">Data Centers</span>
+                <span class="tag">Local Labour Markets</span>
+                <span class="tag">Economic Development</span>
+              </div>
+            </div>
+            <div class="paper-links">
+              <a class="paper-link" href="https://ssrn.com/abstract=7467778" target="_blank">SSRN →</a>
+            </div>
+          </div>
+
+          <div class="paper-item">
+            <div class="paper-num">02</div>
+            <div class="paper-body">
+              <div class="paper-type">Working Paper · SSRN</div>
+              <div class="paper-title">Data Centred: The Shifting Landscape of Canada's Digital Infrastructure</div>
+              <div class="paper-authors">Alexander Carlo, Lyndsey Rolheiser — 2026</div>
+              <div class="paper-tags">
+                <span class="tag">Data Centres</span>
+                <span class="tag">Digital Infrastructure</span>
+                <span class="tag">Canada</span>
+              </div>
+            </div>
+            <div class="paper-links">
+              <a class="paper-link" href="https://ssrn.com/abstract=6464099" target="_blank">SSRN →</a>
+            </div>
+          </div>
+
+          <div class="paper-item">
+            <div class="paper-num">03</div>
+            <div class="paper-body">
+              <div class="paper-type">Working Paper · Cornell SC Johnson College of Business Research Paper</div>
+              <div class="paper-title">Smoked Out: Impact of Wildfire Smoke on Labour and Buildings</div>
+              <div class="paper-authors">Dragana Cvijanovic, Lyndsey Rolheiser, Olivier Schoni, Alex Van de Minne — 2025</div>
+              <div class="paper-tags">
+                <span class="tag">Commercial Real Estate</span>
+                <span class="tag">Wildfire Smoke</span>
+                <span class="tag">Air Pollution</span>
+              </div>
+            </div>
+            <div class="paper-links">
+              <a class="paper-link" href="https://ssrn.com/abstract=4999797" target="_blank">SSRN →</a>
+            </div>
+          </div>
+
+          <div class="paper-item">
+            <div class="paper-num">04</div>
+            <div class="paper-body">
+              <div class="paper-type">Working Paper · SSRN</div>
+              <div class="paper-title">The Past and Future of Non-Residential-to-Residential Conversions in New York City</div>
+              <div class="paper-authors">Lyndsey Rolheiser, Simon Büchler, Ernesto Aldana — 2024</div>
+              <div class="paper-tags">
+                <span class="tag">Conversions</span>
+                <span class="tag">Commercial Real Estate</span>
+                <span class="tag">New York City</span>
+              </div>
+            </div>
+            <div class="paper-links">
+              <a class="paper-link" href="https://ssrn.com/abstract=4697968" target="_blank">SSRN →</a>
+            </div>
+          </div>
+
+          <div class="paper-item">
+            <div class="paper-num">05</div>
             <div class="paper-body">
               <div class="paper-type">Working Paper · Series No. 2025-01</div>
               <div class="paper-title">The Price of Work-from-Home: Commercial Real Estate in the City and the Suburbs</div>
@@ -662,7 +704,7 @@
           </div>
 
           <div class="paper-item">
-            <div class="paper-num">02</div>
+            <div class="paper-num">06</div>
             <div class="paper-body">
               <div class="paper-type">Working Paper · Series No. 2025-02</div>
               <div class="paper-title">Canada's Comparative Advantages for a Government-Wide International Development Infrastructure Strategy</div>
@@ -679,7 +721,7 @@
           </div>
 
           <div class="paper-item">
-            <div class="paper-num">03</div>
+            <div class="paper-num">07</div>
             <div class="paper-body">
               <div class="paper-type">Working Paper · Series No. 2025-03</div>
               <div class="paper-title">Climate Risk and Commercial Property Values: A Review and Analysis of the Literature</div>
@@ -696,7 +738,7 @@
           </div>
 
           <div class="paper-item">
-            <div class="paper-num">04</div>
+            <div class="paper-num">08</div>
             <div class="paper-body">
               <div class="paper-type">Working Paper · SSRN</div>
               <div class="paper-title">Promoting Modular Housing in the Canadian Context</div>
@@ -715,67 +757,6 @@
         </div>
         <div class="ssrn-cta">
           <a class="btn btn-outline-blue" href="https://www.ssrn.com/index.cfm/en/schulich-school-business-res/" target="_blank">View All on SSRN →</a>
-        </div>
-      </div>
-
-      <!-- PUBLICATIONS -->
-      <div id="tab-publications" class="tab-panel">
-        <div class="papers-list">
-          <div class="paper-item">
-            <div class="paper-num">01</div>
-            <div class="paper-body">
-              <div class="paper-type">Published · Journal of Real Estate Research</div>
-              <div class="paper-title">Title of Published Paper One</div>
-              <div class="paper-authors">Author A, Author B — Vol. 45, 2023</div>
-              <div class="paper-tags"><span class="tag">Real Estate</span><span class="tag">Empirical</span></div>
-            </div>
-            <div class="paper-links">
-              <a class="paper-link" href="#" target="_blank">Journal →</a>
-              <a class="paper-link" href="https://www.ssrn.com" target="_blank">SSRN →</a>
-            </div>
-          </div>
-          <div class="paper-item">
-            <div class="paper-num">02</div>
-            <div class="paper-body">
-              <div class="paper-type">Published · Real Estate Economics</div>
-              <div class="paper-title">Title of Published Paper Two</div>
-              <div class="paper-authors">Author C — Vol. 51, 2022</div>
-              <div class="paper-tags"><span class="tag">Housing Markets</span><span class="tag">Econometrics</span></div>
-            </div>
-            <div class="paper-links">
-              <a class="paper-link" href="#" target="_blank">Journal →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- MEDIA -->
-      <div id="tab-media" class="tab-panel">
-        <div class="media-grid">
-          <div class="media-card">
-            <div class="media-outlet">The Globe and Mail</div>
-            <div class="media-headline">Headline of the article referencing our research</div>
-            <div class="media-meta">January 15, 2024</div>
-            <a class="media-link" href="#">Read Article</a>
-          </div>
-          <div class="media-card">
-            <div class="media-outlet">CBC News</div>
-            <div class="media-headline">Another article headline covering our findings</div>
-            <div class="media-meta">October 3, 2023</div>
-            <a class="media-link" href="#">Read Article</a>
-          </div>
-          <div class="media-card">
-            <div class="media-outlet">Financial Post</div>
-            <div class="media-headline">Commentary on housing research from Schulich group</div>
-            <div class="media-meta">August 21, 2023</div>
-            <a class="media-link" href="#">Read Article</a>
-          </div>
-          <div class="media-card">
-            <div class="media-outlet">Policy Options</div>
-            <div class="media-headline">Op-ed: What the data tells us about rental supply</div>
-            <div class="media-meta">May 7, 2023</div>
-            <a class="media-link" href="#">Read Article</a>
-          </div>
         </div>
       </div>
 
@@ -829,31 +810,8 @@
             </div>
             <div class="deliverable-item">
               <span class="deliverable-icon">↗</span>
-              <a class="deliverable-link" href="#">Final Report (forthcoming)</a>
+              <span class="deliverable-link deliverable-pending">Final Report (forthcoming)</span>
               <span class="status-badge status-ongoing">Ongoing</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-funder">Funder / Program Name</div>
-            <div class="project-name">Project Title</div>
-          </div>
-          <div class="project-body">
-            <p class="project-desc">Brief description of this applied research project, its objectives, partners, and the questions it addresses for practitioners or policymakers.</p>
-          </div>
-          <div class="project-footer">
-            <div class="deliverables-label">Deliverables &amp; Materials</div>
-            <div class="deliverable-item">
-              <span class="deliverable-icon">↗</span>
-              <a class="deliverable-link" href="#">Technical Report</a>
-              <span class="status-badge status-active">Available</span>
-            </div>
-            <div class="deliverable-item">
-              <span class="deliverable-icon">↗</span>
-              <a class="deliverable-link" href="#">Data Dashboard</a>
-              <span class="status-badge status-ongoing">In Progress</span>
             </div>
           </div>
         </div>
@@ -879,7 +837,10 @@
   <!-- CMHC PROJECT PAGE -->
   <div id="page-cmhc" class="page" data-nav="applied">
     <div class="page-inner">
-      <button class="back-link" onclick="showPage('applied')">← Applied Research</button>
+      <div class="proj-topbar">
+        <button class="back-link" onclick="showPage('applied')">← Applied Research</button>
+        <button class="share-link" onclick="copyPageLink(this, 'applied-research/cmhc-demonstrations')">Copy link to this page</button>
+      </div>
       <div class="section-header">
         <div class="section-label">CMHC · NHS Demonstrations Initiative</div>
         <h2>A Systemic Approach to Supporting Community Housing Providers</h2>
@@ -1067,19 +1028,69 @@
 </div><!-- end pages-wrapper -->
 
 <script>
-  function showPage(id) {
+  // Each page has its own address, e.g. .../#/applied-research/cmhc-demonstrations
+  const ROUTES = {
+    'home': '',
+    'about': 'about',
+    'academic': 'academic-research',
+    'applied': 'applied-research',
+    'cmhc': 'applied-research/cmhc-demonstrations',
+    'contact': 'contact'
+  };
+  const TITLES = {
+    'home': 'Real Assets | Schulich School of Business',
+    'about': 'About | Real Assets | Schulich School of Business',
+    'academic': 'Academic Research | Real Assets | Schulich School of Business',
+    'applied': 'Applied Research | Real Assets | Schulich School of Business',
+    'cmhc': 'CMHC Demonstrations Initiative: A Systemic Approach to Supporting Community Housing Providers | Real Assets',
+    'contact': 'Contact | Real Assets | Schulich School of Business'
+  };
+
+  function pageFromHash() {
+    const path = decodeURIComponent(location.hash.replace(/^#\/?/, '')).replace(/\/+$/, '');
+    for (const id in ROUTES) { if (ROUTES[id] === path) return id; }
+    return 'home';
+  }
+
+  function showPage(id, fromHash) {
+    if (!document.getElementById('page-' + id)) id = 'home';
     // Hide all pages
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     // Show target
     const target = document.getElementById('page-' + id);
-    if (target) {
-      target.classList.add('active');
-      target.scrollTop = 0;
-    }
+    target.classList.add('active');
+    target.scrollTop = 0;
+    window.scrollTo(0, 0);
     // Update nav active state
     document.querySelectorAll('.nav-links button').forEach(b => {
-      b.classList.toggle('active', b.dataset.page === ((target && target.dataset.nav) || id));
+      b.classList.toggle('active', b.dataset.page === (target.dataset.nav || id));
     });
+    document.title = TITLES[id] || TITLES.home;
+    // Update the address bar so the page can be bookmarked and shared
+    if (!fromHash) {
+      const hash = ROUTES[id] ? '#/' + ROUTES[id] : '';
+      if (location.hash !== hash) {
+        history.pushState(null, '', hash || location.pathname + location.search);
+      }
+    }
+  }
+
+  window.addEventListener('popstate', () => showPage(pageFromHash(), true));
+  window.addEventListener('hashchange', () => showPage(pageFromHash(), true));
+
+  function copyPageLink(btn, path) {
+    const base = location.href.split('#')[0].replace(/index\.html$/, '');
+    const url = base + path + '/';
+    const done = () => {
+      const old = btn.textContent;
+      btn.textContent = 'Link copied';
+      setTimeout(() => { btn.textContent = old; }, 2000);
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(url).then(done, () => prompt('Copy this link:', url));
+    } else {
+      prompt('Copy this link:', url);
+    }
   }
 
   function switchTab(e, id) {
@@ -1089,8 +1100,8 @@
     document.getElementById('tab-' + id).classList.add('active');
   }
 
-  // Init home as active
-  showPage('home');
+  // Open whichever page the address points to
+  showPage(pageFromHash(), true);
 </script>
 
 </body>
