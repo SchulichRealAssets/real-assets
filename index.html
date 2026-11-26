@@ -81,6 +81,8 @@
       position: absolute;
       inset: 0;
       overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
       opacity: 0;
       pointer-events: none;
       transform: translateY(12px);
@@ -95,8 +97,22 @@
     /* ── HERO PAGE ── */
     #page-home {
       background: var(--white);
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden;
+      display: flex;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    /* margin:auto centres the hero when it fits, and lets it scroll from the top when it doesn't */
+    #page-home .hero-inner { margin: auto; }
+    /* grid pattern scrolls with the content so it covers the whole page */
+    #page-home .hero-grid { display: none; }
+    #page-home {
+      background-color: var(--white);
+      background-image:
+        linear-gradient(rgba(26, 93, 166, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 93, 166, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      background-attachment: local;
     }
     .hero-grid {
       position: absolute; inset: 0; opacity: 0.03;
