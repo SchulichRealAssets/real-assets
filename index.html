@@ -421,6 +421,23 @@
     .contact-item-value a { color: var(--blue); text-decoration: none; }
     .contact-item-value a:hover { text-decoration: underline; }
     .contact-cards { display: flex; flex-direction: column; gap: 1.25rem; }
+    /* Balanced layout: intro + contacts across the top, the two boxes side by side below */
+    #page-contact .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+    #page-contact .contact-info {
+      display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 1.5rem;
+      align-items: start; padding-bottom: 3rem; border-bottom: 1px solid var(--rule);
+    }
+    #page-contact .contact-info > p { grid-column: 1; grid-row: 1 / span 2; margin-bottom: 0; max-width: 34rem; }
+    #page-contact .contact-info > .contact-item { grid-column: 2; padding-left: 2rem; }
+    #page-contact .contact-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    #page-contact .university-card { display: flex; flex-direction: column; }
+    #page-contact .university-card .btn { margin-top: auto; align-self: flex-start; }
+    @media (max-width: 900px) {
+      #page-contact .contact-info { grid-template-columns: 1fr; row-gap: 0.25rem; padding-bottom: 2rem; }
+      #page-contact .contact-info > p { grid-column: 1; grid-row: auto; margin-bottom: 1.5rem; }
+      #page-contact .contact-info > .contact-item { grid-column: 1; padding-left: 0; }
+      #page-contact .contact-cards { grid-template-columns: 1fr; gap: 1.25rem; }
+    }
     .university-card { background: var(--white); border: 1px solid var(--rule); padding: 2rem; }
     .university-card-title { font-family: var(--serif); font-size: 1.3rem; margin-bottom: 0.5rem; }
     .university-card-desc { font-size: 0.88rem; color: var(--ink-light); line-height: 1.7; margin-bottom: 1.25rem; }
@@ -768,9 +785,6 @@
           </div>
 
         </div>
-        <div class="ssrn-cta">
-          <a class="btn btn-outline-blue" href="https://www.ssrn.com/index.cfm/en/schulich-school-business-res/" target="_blank">View All on SSRN →</a>
-        </div>
       </div>
 
     </div>
@@ -1009,10 +1023,6 @@
           <div class="contact-item">
             <div class="contact-item-label">Location</div>
             <div class="contact-item-value">Schulich School of Business<br>York University, Toronto, ON</div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-label">SSRN</div>
-            <div class="contact-item-value"><a href="https://www.ssrn.com/index.cfm/en/schulich-school-business-res/" target="_blank">View our papers on SSRN</a></div>
           </div>
         </div>
         <div class="contact-cards">
